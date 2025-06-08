@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "etl-pipeline-apicoinbase"
+version = "0.1.0"
+description = ""
+authors = ["Iasmim Horrana <horranaiasmim@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+flake8 = "^7.2.0"
+pre-commit = "^4.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# Configuração do Black — formata o código automaticamente
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+# Configuração do isort — organiza importações, compatível com Black
+[tool.isort]
+profile = "black"
+line_length = 88
+skip = [".venv", "build", "dist"]
+
+# Configuração do flake8 — só verifica, sem formatar
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]  # Evita conflitos com Black
+exclude = [".git", ".venv", "__pycache__", "build", "dist"]

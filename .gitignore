@@ -1,0 +1,21 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual env (por segurança)
+.env
+.venv/
+
+# Poetry
+poetry.lock
+
+# Pyenv
+.python-version
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs e dados sensíveis
+*.log
+.env
